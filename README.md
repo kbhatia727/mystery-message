@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Anonymous Messaging App
 
-## Getting Started
+This project allows users to send anonymous messages to any other user, view all the messages, and receive message suggestions using OpenAI integration.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Anonymous Messaging**: Send messages to any user without revealing your identity.
+
+- **View Messages**: Users can view all the messages sent to them.
+- **OTP Verification**: Custom OTP verification for user registration and login.
+- **Username Validation**: Ensures users choose a unique username.
+- **NextAuth / Auth.js**: Built-in authentication using NextAuth.
+- **Email Resend**: Resend email functionality for OTP or verification emails.
+- **ZOD for Validation**: Data validation using ZOD across forms and API requests to ensure data consistency.
+- **Connecting Database in Next.js**: MongoDB integration for storing and managing user information, messages, and other essential data.
+- **Message API with Aggregation Pipeline**: MongoDB aggregation pipeline used to efficiently query and aggregate messages for optimized performance.
+- **Integrating AI Features in Next.js**: OpenAI integration for providing personalized message suggestions to enhance the user experience.
+- **React Hook Form, ShadCN, and Debouncing**: Managing forms with React Hook Form, UI components using ShadCN, and debouncing input to improve performance.
+
+## Technologies Used
+
+- **Next.js**: A React framework for building production-ready apps.
+- **React Hook Form**: For handling form validation and submission.
+- **Zod**: Used for data validation in the application.
+- **ShadCN**: UI components to enhance the user interface.
+- **Resend**: For email functionality like OTP sending and resending.
+- **MongoDB**: NoSQL database used to store user data and messages.
+- **NextAuth**: For handling authentication in the app.
+- **OpenAI API**: For generating message suggestions.
+
+### Installation
+
+1. Clone this repository:
+2. Install dependencies:
+3. To configure your environment, create a `.env.local` file in the root directory of the project and add the following keys:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_nextauth_secret
+RESEND_API_KEY=your_resend_api_key
+OPENAI_API_KEY=your_openai_api_key
+NEXTAUTH_URL=http://localhost:3000  # Replace with your production URL if applicable
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Run the development server
